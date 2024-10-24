@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo个人博客搭建-基于MacOS | 卷心菜的学习笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="用Hexo搭建个人博客，需要先对git、github、node、npm、markdowm等有一定了解，如果您还不了解这些名词为何物，建议先用搜索引擎搜索了解一下。 一、安装Hexo 使用如下命名进行安装，前提是需要先安装好npm环境  1npm install hexo-cli -g   检查安装是否成功  1hexo -v   安装git依赖  1npm install --save hexo-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo个人博客搭建-基于MacOS">
+<meta property="og:url" content="https://chengfengjie718.github.io/2024/10/24/hexo/index.html">
+<meta property="og:site_name" content="卷心菜的学习笔记">
+<meta property="og:description" content="用Hexo搭建个人博客，需要先对git、github、node、npm、markdowm等有一定了解，如果您还不了解这些名词为何物，建议先用搜索引擎搜索了解一下。 一、安装Hexo 使用如下命名进行安装，前提是需要先安装好npm环境  1npm install hexo-cli -g   检查安装是否成功  1hexo -v   安装git依赖  1npm install --save hexo-">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-10-24T06:36:34.770Z">
+<meta property="article:modified_time" content="2024-10-24T07:03:50.252Z">
+<meta property="article:author" content="chengfengjie718">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="卷心菜的学习笔记" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">卷心菜的学习笔记</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">天行健，君子以自强不息；地势坤，君子以厚德载物。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chengfengjie718.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-hexo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/24/hexo/" class="article-date">
+  <time class="dt-published" datetime="2024-10-24T06:36:34.770Z" itemprop="datePublished">2024-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Hexo个人博客搭建-基于MacOS
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>用Hexo搭建个人博客，需要先对<code>git</code>、<code>github</code>、<code>node</code>、<code>npm</code>、<code>markdowm</code>等有一定了解，如果您还不了解这些名词为何物，建议先用搜索引擎搜索了解一下。</p>
+<h1 id="一、安装Hexo"><a href="#一、安装Hexo" class="headerlink" title="一、安装Hexo"></a>一、安装Hexo</h1><ul>
+<li>使用如下命名进行安装，前提是需要先安装好npm环境</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>检查安装是否成功</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装git依赖</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、初始化博客项目"><a href="#二、初始化博客项目" class="headerlink" title="二、初始化博客项目"></a>二、初始化博客项目</h1><ul>
+<li>在电脑上新建一个目录用于存储博客项目，例如我的目录路径为: <code>~/Desktop/chengfengjie-blog</code>，初始化项目的命令如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Desktop/chengfengjie-blog</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装依赖</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动项目</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>项目启动成功之后，就可以通过 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 访问了</li>
+</ul>
+<h1 id="三、将项目部署到github"><a href="#三、将项目部署到github" class="headerlink" title="三、将项目部署到github"></a>三、将项目部署到github</h1><ul>
+<li><p>首先注册github账号，在站点 <a target="_blank" rel="noopener" href="https://github.com/">https://github.com</a> 注册即可</p>
+</li>
+<li><p>配置SSH key, 配置了SSH key可以免密将本地代码上传到github, 无需每次都输入账号和密码，配置命令如下</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 如果~/.ssh目录不存在，先建上</span><br><span class="line">cd ~/.ssh</span><br><span class="line"># 输入命令之后连续回车即可</span><br><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br><span class="line"># 查看下是否生成成功, 生成成功之后会在目录下生成id_rsa、id_rsa.pub文件</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>登录guthub进入页面: <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a> , 找到<code>New SSH key</code>按钮点击，输入Title和Key, key就是文件中找到对用邮箱的字符串</p>
+</li>
+<li><p>输入如下命令测试是否成功</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在github创建博客项目，链接: <a target="_blank" rel="noopener" href="https://github.com/new">https://github.com/new</a> , 输入仓库名称 <code>&#123;用户名&#125;.github.io</code> , 这个地址就是博客地址，可以通过此地址访问网站</p>
+</li>
+<li><p>在本地项目下找到配置文件<code>_config.yml</code>， 修改配置如下:</p>
+</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:&#123;用户名&#125;/&#123;用户名&#125;.github.io.git</span></span><br><span class="line">  <span class="comment"># 这个要看您的仓库分支，有的仓库分支是master，有的是main</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行如下命令就可以将博客发布上去</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chengfengjie718.github.io/2024/10/24/hexo/" data-id="cm2mysgjg0000wfzm8m4qb4gw" data-title="Hexo个人博客搭建-基于MacOS" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/10/24/hexo/">Hexo个人博客搭建-基于MacOS</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 chengfengjie718<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
