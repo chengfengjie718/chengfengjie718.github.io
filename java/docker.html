@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Docker学习笔记 | 卷心菜的学习笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="一、Docker基础命令 Docker镜像相关命令,镜像可以从Docker Hub获取  12# 从docker镜像仓库获取镜像docker pull ubumtu:18.04 上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub （docker.io）获取镜像。而镜像名称是 ubuntu:18.04，因此将会获取官方镜像 library&#x2F;ubuntu 仓库中标签为">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Docker学习笔记">
+<meta property="og:url" content="https://chengfengjie718.github.io/java/docker.html">
+<meta property="og:site_name" content="卷心菜的学习笔记">
+<meta property="og:description" content="一、Docker基础命令 Docker镜像相关命令,镜像可以从Docker Hub获取  12# 从docker镜像仓库获取镜像docker pull ubumtu:18.04 上面的命令中没有给出 Docker 镜像仓库地址，因此将会从 Docker Hub （docker.io）获取镜像。而镜像名称是 ubuntu:18.04，因此将会获取官方镜像 library&#x2F;ubuntu 仓库中标签为">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-10T07:50:05.000Z">
+<meta property="article:modified_time" content="2024-10-29T12:55:52.312Z">
+<meta property="article:author" content="chengfengjie718">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="卷心菜的学习笔记" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">卷心菜的学习笔记</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">天行健，君子以自强不息；地势坤，君子以厚德载物。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chengfengjie718.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/java/docker.html" class="article-date">
+  <time class="dt-published" datetime="2020-01-10T07:50:05.000Z" itemprop="datePublished">2020-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Docker学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="一、Docker基础命令"><a href="#一、Docker基础命令" class="headerlink" title="一、Docker基础命令"></a>一、Docker基础命令</h1><ul>
+<li>Docker镜像相关命令,镜像可以从<a target="_blank" rel="noopener" href="https://hub.docker.com/">Docker Hub</a>获取</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从docker镜像仓库获取镜像</span></span><br><span class="line">docker pull ubumtu:18.04</span><br></pre></td></tr></table></figure>
+<p>上面的命令中没有给出 <code>Docker</code> 镜像仓库地址，因此将会从 <code>Docker Hub （docker.io</code>）获取镜像。而镜像名称是 <code>ubuntu:18.04</code>，因此将会获取官方镜像 <code>library/ubuntu</code> 仓库中标签为 18.04 的镜像。<code>docker pull</code> 命令的输出结果最后一行给出了镜像的完整名称，即： <code>docker.io/library/ubuntu:18.04</code>。</p>
+<h1 id="二、Docker部署SpringBoot程序"><a href="#二、Docker部署SpringBoot程序" class="headerlink" title="二、Docker部署SpringBoot程序"></a>二、Docker部署SpringBoot程序</h1><h2 id="01、打包部署到本地"><a href="#01、打包部署到本地" class="headerlink" title="01、打包部署到本地"></a>01、打包部署到本地</h2><ul>
+<li>创建工作目录，编写Dockerfile文件，文件内容如下</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FROM openjdk:8</span><br><span class="line">RUN mkdir /app</span><br><span class="line">WORKDIR /app</span><br><span class="line">COPY ./core-eureka.jar /app</span><br><span class="line">EXPOSE 13018</span><br><span class="line"></span><br><span class="line">ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;core-eureka.jar&quot;]</span><br></pre></td></tr></table></figure>
+
+<p><em>注意:COPY的文件需先复制到当前Dockerfile的工作目录，否则复制报错</em> </p>
+<ul>
+<li>在工作目录执行如下命令，生成<code>image</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t eureka-app .</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看是否打包成功</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行命令启动容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name core-eureka -p 13018:3018 core-eureka</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看容器运行状态</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果容器启动失败，可以通过以下命令查看日志</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs &#123;containerId&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container <span class="built_in">rm</span> &#123;容器<span class="built_in">id</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker image <span class="built_in">rm</span> &#123;镜像<span class="built_in">id</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="02、打包部署到远程服务器"><a href="#02、打包部署到远程服务器" class="headerlink" title="02、打包部署到远程服务器"></a>02、打包部署到远程服务器</h2><ul>
+<li>首先确保远程服务器安装了docker。在本地打包一个镜像，命令如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker save [OPTIONS] IMAGE</span><br><span class="line"><span class="comment"># 例如</span></span><br><span class="line">docker save -o ./eureka-app.tar eureka-app</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>scp</code>命令将镜像文件上传到远程服务器，命令如下</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp &#123;local_file&#125; &#123;remote_username&#125;@&#123;remote_ip&#125;:&#123;remote_folder&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在远程服务器载入镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker load [OPTIONS]</span><br><span class="line"><span class="comment"># 例如通过如下命令载入</span></span><br><span class="line">docker load --input ./eureka-app.tar</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chengfengjie718.github.io/java/docker.html" data-id="cm2ugejk50000huzm0nw08bws" data-title="Docker学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/10/java-archives/">Java</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/24/other-archives/">杂学</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 chengfengjie718<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Java学习笔记-I/O | 卷心菜的学习笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Java中传统的java.io包基于流模型实现，包括字节流和字符流，字节核心类包括输入流java.io.InputStream和输出流java.io.OutputStream。字符流核心类包括java.io.Reader和java.io.Writer。 一、java I&#x2F;O概述 流(Stream)是指数据在计算机与计算机之间或计算机各部件之间的流动，例如: 数据从硬盘流入到内存、数据通过">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Java学习笔记-I&#x2F;O">
+<meta property="og:url" content="https://chengfengjie718.github.io/java/io.html">
+<meta property="og:site_name" content="卷心菜的学习笔记">
+<meta property="og:description" content="Java中传统的java.io包基于流模型实现，包括字节流和字符流，字节核心类包括输入流java.io.InputStream和输出流java.io.OutputStream。字符流核心类包括java.io.Reader和java.io.Writer。 一、java I&#x2F;O概述 流(Stream)是指数据在计算机与计算机之间或计算机各部件之间的流动，例如: 数据从硬盘流入到内存、数据通过">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-10T07:50:05.000Z">
+<meta property="article:modified_time" content="2024-10-24T09:00:55.642Z">
+<meta property="article:author" content="chengfengjie718">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="卷心菜的学习笔记" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">卷心菜的学习笔记</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">天行健，君子以自强不息；地势坤，君子以厚德载物。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://chengfengjie718.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/java/io.html" class="article-date">
+  <time class="dt-published" datetime="2020-01-10T07:50:05.000Z" itemprop="datePublished">2020-01-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Java学习笔记-I/O
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Java中传统的<code>java.io</code>包基于流模型实现，包括字节流和字符流，字节核心类包括输入流<code>java.io.InputStream</code>和输出流<code>java.io.OutputStream</code>。字符流核心类包括<code>java.io.Reader</code>和<code>java.io.Writer</code>。</p>
+<h1 id="一、java-I-O概述"><a href="#一、java-I-O概述" class="headerlink" title="一、java I&#x2F;O概述"></a>一、java I&#x2F;O概述</h1><ul>
+<li>流(Stream)是指数据在计算机与计算机之间或计算机各部件之间的流动，例如: 数据从硬盘流入到内存、数据通过网络在不通计算机之间流动等。</li>
+</ul>
+<h1 id="二、基于文件的I-O"><a href="#二、基于文件的I-O" class="headerlink" title="二、基于文件的I&#x2F;O"></a>二、基于文件的I&#x2F;O</h1><ul>
+<li>文件操作主要通过类<code>java.io.File</code>实现，可以基于字节输入流<code>java.io.FileInputStream</code>和字节输出流<code>java.io.FileOutputStream</code>进行文件内容的读写，<code>java.io.File</code>负责对文件进行基本的检查，文件的一些主要操作如下</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">file</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="comment">// 需要访问的文件路径</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> <span class="string">&quot;&#123;filePath&#125;/data.json&quot;</span>;</span><br><span class="line">    <span class="comment">// 创建文件对象</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(filePath);</span><br><span class="line">    <span class="comment">// 检查文件是否存在</span></span><br><span class="line">    <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">        <span class="comment">// 文件不存在则创建文件</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> file.createNewFile();</span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;文件 : &quot;</span> + filePath + <span class="string">&quot; 创建成功&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;文件 : &quot;</span> + filePath + <span class="string">&quot; 创建失败&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 检查文件是否是目录</span></span><br><span class="line">    <span class="keyword">if</span> (file.isDirectory()) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;文件是目录&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建文件输入流</span></span><br><span class="line">    <span class="type">FileInputStream</span> <span class="variable">fileInputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(file);</span><br><span class="line">    <span class="comment">// 创建文件输出流</span></span><br><span class="line">    <span class="type">FileOutputStream</span> <span class="variable">fileOutputStream</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(file);</span><br><span class="line">    <span class="comment">// 将数据输出到文件</span></span><br><span class="line">    fileOutputStream.write(<span class="string">&quot;&#123;&#125;&quot;</span>.getBytes(StandardCharsets.UTF_8));</span><br><span class="line"></span><br><span class="line">    fileOutputStream.close();</span><br><span class="line">    fileInputStream.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://chengfengjie718.github.io/java/io.html" data-id="cm2ufsycb000271zmcwzl54bu" data-title="Java学习笔记-I/O" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/10/java-archives/">Java</a>
+          </li>
+        
+          <li>
+            <a href="/2018/10/24/other-archives/">杂学</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 chengfengjie718<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
