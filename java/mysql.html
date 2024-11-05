@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Maven学习笔记 | 卷心菜的学习笔记</title>
+  <title>Mysql学习笔记 | 卷心菜的学习笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="mvn命令常用参数如下 12345678-D : 指定参数，例如 -Dmaven.test.skip&#x3D;true, 跳过单元测试-P : 指定Profile配置，可以用于区分环境-e : 显示出错信息-o : 离线执行命令，不从远程仓库更新包-X : 显示maven允许的debug信息-U : 强制远程更新snapshot的插件和依赖-s : 指定配置文件，例如可以指定一个配置文件 -s .&#x2F;set">
+  <meta name="description" content="01.创建用户和授权 create user &#39;platform_db_user&#39;@&#39;%&#39; IDENTIFIED BY &#39;abcd-1234&#39;; : 创建一个用户名为platform_db_user的用户，密码为abcd-1234,%表示任何主机可连接  GRANT ALL PRIVILEGES ON platform_db.* TO &#39;pl">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Maven学习笔记">
-<meta property="og:url" content="https://chengfengjie718.github.io/java/maven.html">
+<meta property="og:title" content="Mysql学习笔记">
+<meta property="og:url" content="https://chengfengjie718.github.io/java/mysql.html">
 <meta property="og:site_name" content="卷心菜的学习笔记">
-<meta property="og:description" content="mvn命令常用参数如下 12345678-D : 指定参数，例如 -Dmaven.test.skip&#x3D;true, 跳过单元测试-P : 指定Profile配置，可以用于区分环境-e : 显示出错信息-o : 离线执行命令，不从远程仓库更新包-X : 显示maven允许的debug信息-U : 强制远程更新snapshot的插件和依赖-s : 指定配置文件，例如可以指定一个配置文件 -s .&#x2F;set">
+<meta property="og:description" content="01.创建用户和授权 create user &#39;platform_db_user&#39;@&#39;%&#39; IDENTIFIED BY &#39;abcd-1234&#39;; : 创建一个用户名为platform_db_user的用户，密码为abcd-1234,%表示任何主机可连接  GRANT ALL PRIVILEGES ON platform_db.* TO &#39;pl">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-10T07:50:05.000Z">
-<meta property="article:modified_time" content="2024-10-25T07:18:20.855Z">
+<meta property="article:modified_time" content="2024-11-01T13:47:29.167Z">
 <meta property="article:author" content="chengfengjie718">
 <meta name="twitter:card" content="summary">
   
@@ -77,7 +77,7 @@
       <div class="outer">
         <section id="main"><article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/java/maven.html" class="article-date">
+    <a href="/java/mysql.html" class="article-date">
   <time class="dt-published" datetime="2020-01-10T07:50:05.000Z" itemprop="datePublished">2020-01-10</time>
 </a>
     
@@ -89,7 +89,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Maven学习笔记
+      Mysql学习笔记
     </h1>
   
 
@@ -97,15 +97,19 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p><code>mvn</code>命令常用参数如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-D : 指定参数，例如 -Dmaven.test.skip=true, 跳过单元测试</span><br><span class="line">-P : 指定Profile配置，可以用于区分环境</span><br><span class="line">-e : 显示出错信息</span><br><span class="line">-o : 离线执行命令，不从远程仓库更新包</span><br><span class="line">-X : 显示maven允许的debug信息</span><br><span class="line">-U : 强制远程更新snapshot的插件和依赖</span><br><span class="line">-s : 指定配置文件，例如可以指定一个配置文件 -s ./settings.xml</span><br><span class="line">-P&#123;profiles&#125; : 激活配置，例如配置ga配置文件: -Pga</span><br></pre></td></tr></table></figure>
+        <h1 id="01-创建用户和授权"><a href="#01-创建用户和授权" class="headerlink" title="01.创建用户和授权"></a>01.创建用户和授权</h1><ul>
+<li><p><code>create user &#39;platform_db_user&#39;@&#39;%&#39; IDENTIFIED BY &#39;abcd-1234&#39;;</code> : 创建一个用户名为<code>platform_db_user</code>的用户，密码为<code>abcd-1234</code>,<code>%</code>表示任何主机可连接</p>
+</li>
+<li><p><code>GRANT ALL PRIVILEGES ON platform_db.* TO &#39;platform_db_user&#39;@&#39;%&#39;;</code> : 将数据库<code>platform_db</code>的所有权限开给用户<code>platform_db_user</code></p>
+</li>
+<li><p><code>FLUSH PRIVILEGES;</code>: 刷新所有权限</p>
+</li>
+</ul>
 
-<p><code>mvn</code>常用命令如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># maven打包</span><br><span class="line">mvn package</span><br><span class="line"># maven跳过测试打包</span><br><span class="line">mvn package -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://chengfengjie718.github.io/java/maven.html" data-id="cm3401l480008dgzm0tlq2hc6" data-title="Maven学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="https://chengfengjie718.github.io/java/mysql.html" data-id="cm3401l480009dgzm769hdzdq" data-title="Mysql学习笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
